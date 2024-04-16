@@ -1,0 +1,35 @@
+:root{
+    --color-1: #8C4A63;
+    --color-2: #8C4A63;
+    --color-3: #F27E9D;
+    --color-4: #63333f;
+    --color-5: #FFFFFF; 
+    --space-layout-padding-lr: 0px 15px;
+    --space-layout-padding-t: 10px;
+    --layout-imagen-width: 100%;
+    --layout-imagen-height: 350px;
+
+    --layout-imagen-width-detail: 100%;
+    --layout-imagen-height-detail: 392px;
+
+    --layout-imagen-width-checkout: 70px;
+    --layout-imagen-height-checkout: 70px;
+
+
+}
+@font-face {
+    font-family: "Monserrat-Black";
+    src: url("../storage/font/encode-sans/Montserrat-Black.ttf");
+}
+@font-face {
+    font-family: "Monserrat-Bold";
+    src: url("../storage/font/encode-sans/Montserrat-Bold.ttf");
+}
+@font-face {
+    font-family: "Monserrat-Italic";
+    src: url("../storage/font/encode-sans/Montserrat-Italic.ttf");
+}
+@font-face {
+    font-family: "Monserrat-Extralight";
+    src: url("../storage/font/encode-sans/Montserrat-ExtraLight.ttf");
+}
