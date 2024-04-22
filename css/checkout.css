@@ -19,6 +19,7 @@
 
 .header__nav div:nth-child(2) {
     font-family: "EncodeSans-SemiBold";
+    color: var(--color-2);
 }
 
 .main {
@@ -62,6 +63,7 @@
 .product__description h3 {
     font-size: 1em;
     font-family: "EncodeSans-SemiBold";
+    color: var(--color-2);
 }
 
 .product__description small {
@@ -74,6 +76,7 @@
     position: absolute;
     bottom: 0;
     font-size: .9em;
+    color: var(--color-2);
 }
 
 .product__custom {
