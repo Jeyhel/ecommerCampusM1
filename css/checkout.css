@@ -253,6 +253,7 @@
     align-items: center;
     border-radius: 40px ;
     box-shadow: 0px 0px 55px 10px #fff
+    
 }
 .footer__ul li{
     list-style: none;
@@ -266,12 +267,14 @@
 }
 .footer__ul li a{
     display: flex;
+    color:white
 
 }
 
 .footer__ul li a span{
     
     font-family: "EncodeSans-Medium";
+    color: #fff;
 }
 .footer__ul li a del{
     color: var(--color-3);
