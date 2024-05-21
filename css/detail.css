@@ -2,7 +2,7 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: "EncodeSans-Regular";
+    font-family: "Monserrat-Italic";
     box-sizing: border-box;
 }
 .main{
@@ -23,15 +23,25 @@
 }
 .product__image{
     /* background: blue; */
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
     width: var(--layout-imagen-width-detail);
     height: var( --layout-imagen-height-detail);
     border-radius: 20px;
-    overflow: hidden;
 }
-.product__image img{
+.product__image__item{
+    flex: 1;
+    min-width: 98%;
+    margin: 0 10px;
+    /* background-color: purple; */
+    height: var(--layout-imagen-height-detail);
+}
+.product__image__item img{
     width: var(--layout-imagen-width-detail);
     height: var( --layout-imagen-height-detail);
-    object-fit: cover;
+    object-fit: contain;
 }
 .product__menu{
     /* background: violet; */
@@ -53,7 +63,7 @@
     align-items: center;
 }
 .detail__head h1{
-    font-family: "EncodeSans-SemiBold";
+    font-family: "Monserrat-Italic";
 }
 
 .product__select {
@@ -64,7 +74,7 @@
 }
 
 .product__select span{
-    font-family: "EncodeSans Bold" ;
+    font-family: "Monserrat-Italic" ;
 }
 
 .detail__core {
@@ -101,11 +111,12 @@
     /* background: red; */
     display: flex;
     justify-content: space-between;
+    padding-bottom: 80px;
 }
 .product__size,
 .product__color{
     margin-top: 5px;
-    font-family: "EncodeSans-Bold";
+    font-family: "Monserrat-Italic";
 
 }
 .product__siz h5,
@@ -161,3 +172,4 @@
    width: 25px; 
  
 }
+
