@@ -3,7 +3,7 @@ import { headers } from "../components/env.js";
 export const getAllProductName = async({search:text, id:idCategory})=>{
     console.log("Cargando dato.......");
     console.log(text, idCategory); 
-    const url = `https://real-time-amazon-data.p.rapidapi.com/search?query=${text}&page=1&country=US&sort_by=RELEVANCE&category_id=${idCategory}&product_condition=ALL`;
+    const url = `https://real-time-amazon-data.p.rapidapi.com/search?query=${text}&sort_by=RELEVANCE&category_id=${idCategory}&product_condition=ALL`;
     const options = {
         method: 'GET',
         headers
@@ -15,7 +15,7 @@ export const getAllProductName = async({search:text, id:idCategory})=>{
 
 export const getAllCategory = async()=>{
     console.log("Esperando .......");
-    const url = 'https://real-time-amazon-data.p.rapidapi.com/product-category-list?country=US';
+    const url = `https://real-time-amazon-data.p.rapidapi.com/product-category-list?country=US`;
     const options = {
         method: 'GET',
         headers
