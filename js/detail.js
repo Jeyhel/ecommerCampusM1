@@ -22,6 +22,7 @@ addEventListener("DOMContentLoaded", async(e)=>{
     footer__ul.innerHTML = await priceDetails(info);
 
 
+
     let decreaseButton = document.querySelector("#decreaseQuantity");
     let increaseButton = document.querySelector("#increaseQuantity");
     let quantitySpan = document.querySelector("#quantity");
@@ -95,34 +96,6 @@ if(LeerMasButton){
 };
 });
 
-
-
-    
-        let decreaseButton = document.querySelector("#decreaseQuantity");
-        let increaseButton = document.querySelector("#increaseQuantity");
-        let quantitySpan = document.querySelector("#quantity");
-        
-        decreaseButton.addEventListener('click', async e => {
-        let quantity = parseInt(quantitySpan.textContent);
-        if(quantity > 1){
-            quantitySpan.textContent = quantity - 1;
-        };
-        });
-        
-        increaseButton.addEventListener('click', async e => {
-        let quantity = parseInt(quantitySpan.textContent);
-        quantitySpan.textContent = quantity + 1;
-        });
-    
-        let LeerMasButton = document.querySelector("#leerMasOption");
-        let informationProduct = document.querySelector("#informationProduct")
-    
-        LeerMasButton.addEventListener('click', async e => {
-            let description = info.data.product_description;
-            informationProduct.textContent = description;
-        });
-    });
-    // let {data} = res;
     // let {
     //     category_path,
     //     about_product,
