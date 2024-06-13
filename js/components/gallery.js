@@ -1,27 +1,26 @@
-export const galleryIndex = (res)=>{
+export const galleryIndex = (res, category)=>{
     let {products} = res.data
     let plantilla = "";
-    products.forEach((value, index) => {
-        plantilla +- /*html*/`
+    products.forEach((value,index) => {
+        plantilla += /*html*/`
         <section>
-            <div class="section__font_page">
-                <a href="views/detail.html">
-                    <img src ="${value.product_photo}">
-                    
-                </a>
-                <img src ="storage/img/heart.svg">
+            <div class="section__front_page">
+                <a href="views/detail.html?id=${value.asin}">
+                   <img src="${value.product_photo}">
+               </a>
+               <img src="storage/img/heart.svg">
             </div>
-            <h5> ${value.product_title}</h5>
-            <small> Make up </small>
+            <h5>${value.product_title}</h5>
+            <small>${category}</small>
             <div class="section__price">
-                <span>$212.99</span>
-                <div class ="price__score">
-                    <img src="storage/img/star.svg">
-                    <p>5.0</p>
-                </div>
-            </div>
-        </section>
-        `;
-        }); 
-        return plantilla
-        }
+                <span>${value.product_price}</span>
+                <div  class="price__score">
+                   <img src="storage/img/star.svg">
+                   <p>${(value.product_star_rating!=null) ? value.product_star_rating : 0}</p>
+               </div>
+           </div>
+       </section>
+       `;
+    });
+    return plantilla
+}

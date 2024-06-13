@@ -151,7 +151,7 @@
 .section__font_page a img:first-child{
     width: var(--layout-imagen-width);
     height: var(--layout-imagen-height);
-    object-fit: cover;
+    object-fit: scale-down;
     
 }
 .section__font_page > img:last-child{

@@ -1,17 +1,15 @@
-export const menuListCategoryIndex = ()=> {
-
-
-    let {data} = res;
-    let plantila = ""; 
- data.forEach((value, index) => {
-    plantilla +- /*HTML*/`
-        <li title> "$("
-        <a href="#">
-            <img src="storage/img/category.svg"> 
-            All Items
-        </a>
-    </li>
-    <li>
-
-` })
+export const menuListCategoryIndex = (res)=>{
+    let {data} = res; 
+    let plantilla = "";
+    data.forEach((value, index) => {
+        plantilla += /*html*/`
+        <li title="${value.name}">
+        <a href="?id=${value.id}" >
+                <img src="storage/img/category.svg" >
+                <span>${value.name}</span>
+            </a>
+        </li>
+        `;
+    });
+    return plantilla;
 }
