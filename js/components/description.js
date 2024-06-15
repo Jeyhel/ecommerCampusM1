@@ -1,18 +1,22 @@
 export const descripDetails = async({data: dataUpdate} = res) => {
-    let createDescripHTML = async() => {
-        let description = await dataUpdate.product_description;
-        let trunDescription = description;
-    
-        if (description.length > 150) {
-            trunDescription = description.substring(0, 150) + '... <strong id = "leerMasOption"> Leer más.</strong>';
-        }
-        return `${trunDescription}`;
+    if (dataUpdate.product_description != null){
+
+
+        let createDescripHTML = async() => {
+            let description = await dataUpdate.product_description;
+            let trunDescription = description;
         
-    }
-    
-    return /*html*/`
-    <article class="product__information">
-        <p id = "informationProduct">${await createDescripHTML()}</p>
-    </article>
-    `
-};
+            if (description.length > 150) {
+                trunDescription = description.substring(0, 150) + '... <strong id = "leerMasOption"> Leer más.</strong>';
+            }
+            return `${trunDescription}`;
+            
+        }
+        
+        return /*html*/`
+        <article class="product__information">
+            <p id = "informationProduct">${await createDescripHTML()}</p>
+        </article>
+        `
+    }else return null
+    }; 
