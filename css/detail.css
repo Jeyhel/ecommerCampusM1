@@ -101,6 +101,7 @@
     /* background: red; */
     display: flex;
     justify-content: space-between;
+    padding-bottom: 80px;
 }
 .product__size,
 .product__color{
