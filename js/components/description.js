@@ -12,7 +12,7 @@ export const descripDetails = async({data: dataUpdate} = res) => {
     
     return /*html*/`
     <article class="product__information">
-            <p id = "informationProduct">${await createDescripHTML()}</p>
+        <p id = "informationProduct">${await createDescripHTML()}</p>
     </article>
     `
 };
