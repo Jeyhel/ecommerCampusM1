@@ -22,7 +22,6 @@ addEventListener("DOMContentLoaded", async(e)=>{
     footer__ul.innerHTML = await priceDetails(info);
 
 
-
     let decreaseButton = document.querySelector("#decreaseQuantity");
     let increaseButton = document.querySelector("#increaseQuantity");
     let quantitySpan = document.querySelector("#quantity");
@@ -95,57 +94,6 @@ if(LeerMasButton){
     });
 };
 });
-
-
-
-
-
-// let s = document.querySelector("#s");
-// let m = document.querySelector("#m");
-// let l = document.querySelector("#l");
-// let xl = document.querySelector("#xl");
-
-// let images = [s, m, l, xl];
-// let imgPaths = {
-//     s: "../storage/img/sizeS.new.svg",
-//     m: "../storage/img/sizeM.new.svg",
-//     l: "../storage/img/sizeL.new.svg",
-//     xl: "../storage/img/sizeXL.new.svg"
-// };
-
-// let originalPaths = {
-//     s: "../storage/img/sizeS.svg",
-//     m: "../storage/img/sizeM.svg",
-//     l: "../storage/img/sizeL.svg",
-//     xl: "../storage/img/sizeXL.svg"
-// };
-
-// function deselectAll() {
-//     images.forEach(image => {
-//         image.src = originalPaths[image.id];
-//     });
-// }
-
-// s.addEventListener("click", (e) => {
-//     deselectAll();
-//     s.src = imgPaths.s;
-// });
-
-// m.addEventListener("click", (e) => {
-//     deselectAll();
-//     m.src = imgPaths.m;
-// });
-
-// l.addEventListener("click", (e) => {
-//     deselectAll();
-//     l.src = imgPaths.l;
-// });
-
-// xl.addEventListener("click", (e) => {
-//     deselectAll();
-//     xl.src = imgPaths.xl;
-// });
-// });
 
 
 
