@@ -19,4 +19,4 @@ export const descripDetails = async({data: dataUpdate} = res) => {
         </article>
         `
     }else return null
-    }; 
+}; 
