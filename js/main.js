@@ -28,10 +28,6 @@ addEventListener("DOMContentLoaded", async e=>{
     
 })
 
-
-
-
-
 input__search.addEventListener("change", async e => {
     let params = new URLSearchParams(location.search);
     let data = { search : e.target.value, id: params.get('id')}
