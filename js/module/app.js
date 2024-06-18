@@ -26,13 +26,13 @@ export const getAllCategory = async()=>{
 }
 
 
-export const getAllInicio= async()=>{
-    let page = 2000
-    page = parseInt(Math.random)+ (page /20)
-    if (!page) page = 1
-    
 
-    console.log("Cargando dato.......");
+export const getAllInicio = async()=>{
+    let page = 2000
+    page = Math.random()*(page/20);
+    page = parseInt(Math.round(page));
+    if (!page) page = 1;
+    console.log("Esperando .......");
     const url = `https://real-time-amazon-data.p.rapidapi.com/search?query=make%20up&page${page}=1&country=US&sort_by=NEWEST&category_id=fashion&product_condition=NEW`;
     const options = {
         method: 'GET',
