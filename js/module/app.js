@@ -29,7 +29,6 @@ export const getAllCategory = async()=>{
 }
 
 
-document.querySelector(".carga").style.display = "block";
 export const getAllInicio= async()=>{
     let page = 2000
     
