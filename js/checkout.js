@@ -95,7 +95,57 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 
 
 
+let decreaseButton = document.querySelector("#decreaseQuantity");
+let increaseButton = document.querySelector("#increaseQuantity");
+let quantitySpan = document.querySelector("#quantity");
+let precioTotal = document.querySelector("#precioTotal")
 
+decreaseButton.addEventListener('click', async e => {
+    let quantity = parseInt(quantitySpan.textContent);
+if (info.data.product_price !==  null) {
+    let precioentero = parseFloat(info.data.product_price.replace('$',''))
+    if (info.data.product_original_price !== null){
+        let precioOriginal = parseFloat(info.data.product_original_price.replace('$',''));
+        if(quantity > 1){
+            quantitySpan.textContent = quantity - 1;
+        quantity = parseInt(quantitySpan.textContent);
+        precioTotal.innerHTML =/*html*/`
+            <span id= "precioTotal" >Add to Cart $${quantity * precioentero}<del><sub>$${quantity * precioOriginal}</sub></del></span>
+            `}
+        }else{
+            if(quantity > 1){
+                quantitySpan.textContent = quantity - 1;
+                quantity = parseInt(quantitySpan.textContent);
+                precioTotal.innerHTML = /*html*/`
+                <span id= "precioTotal">Add to Cart $${quantity * precioentero}</span>
+                `}
+            }
+        }else {
+            if(quantity > 1){
+                quantitySpan.textContent = quantity - 1;
+            };}
+        });
+        
+        
+        
+        increaseButton.addEventListener('click', async e => {
+            let quantity = parseInt(quantitySpan.textContent);
+            if (info.data.product_price !==  null) {
+                let precioentero = parseFloat(info.data.product_price.replace('$',''))
+                if (info.data.product_original_price !== null){
+                    let precioOriginal = parseFloat(info.data.product_original_price.replace('$',''));
+                    quantitySpan.textContent = quantity + 1;
+                    quantity = parseInt(quantitySpan.textContent);
+                    precioTotal.innerHTML =/*html*/`
+                    <span id= "precioTotal" >Add to Cart $${quantity * precioentero}<del><sub>$${quantity * precioOriginal}</sub></del></span>
+                    `}else{
+                        quantitySpan.textContent = quantity + 1;
+                        quantity = parseInt(quantitySpan.textContent);
+                        precioTotal.innerHTML = /*html*/`
+                        <span id= "precioTotal">Add to Cart $${quantity * precioentero}</span>
+                        `}
+                    }else return quantitySpan.textContent = quantity + 1;
+});
 
                     
                     // let informationProduct = document.querySelector("#informationProduct")
