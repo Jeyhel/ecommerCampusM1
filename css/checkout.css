@@ -218,15 +218,14 @@
 .bill__subtotal label{
     color: var(--color-2);
 }
-.bil_fee{
+.bill__fee {
+    /* background: violet; */
     display: flex;
     justify-content: space-between;
-    margin-bottom:15px;
-    padding-bottom: 10px;
+    margin-bottom: 25px;
     border-bottom-width:1px;
-    border-bottom-style:solid;
-    /* border-bottom-color:red; */
-  
+    border-bottom-style: solid;
+    border-bottom-color:var(--color-3)
 }
 .bill__subtotal{
     /* background: green; */

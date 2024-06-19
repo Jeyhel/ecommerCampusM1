@@ -76,7 +76,6 @@ export const galleryCheckout = async()=>{
 return plantilla;
 }
 
-
 export const gallerycheckPrice = ({data: dataUpdate} = res) => {
     return /*html*/`
 <article class="section__bill">
