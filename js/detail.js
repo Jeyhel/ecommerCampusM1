@@ -8,6 +8,7 @@ let main__section_gallery = document.querySelector(".main__section");
 let main__section__title = document.querySelector("#main__section__title");
 let main__section__description = document.querySelector("#main__section__description");
 let footer__ul = document.querySelector(".footer__ul");
+let precioTotal = document.querySelector("#precioTotal");
 
 addEventListener("DOMContentLoaded", async(e)=>{
     let params = new URLSearchParams(location.search);
@@ -19,6 +20,7 @@ addEventListener("DOMContentLoaded", async(e)=>{
     main__section__title.innerHTML = await titleProductDetail(info);
     main__section__description.innerHTML = await descripDetails(info);
     footer__ul.innerHTML = await priceDetails(info);
+
 
 
     let decreaseButton = document.querySelector("#decreaseQuantity");
@@ -73,6 +75,14 @@ addEventListener("DOMContentLoaded", async(e)=>{
             }else return quantitySpan.textContent = quantity + 1;
 });
 
+
+
+footer__ul.addEventListener("click", async (e) =>{
+    sessionStorage.setItem(id, localStorage.getItem(id));
+})
+
+
+
 let informationProduct = document.querySelector("#informationProduct")
 let LeerMasButton = document.querySelector("#leerMasOption");
 
@@ -82,8 +92,9 @@ if(LeerMasButton){
         informationProduct.textContent = description;
     });
 };
-
 });
+
+
 
 
 
