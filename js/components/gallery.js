@@ -26,6 +26,7 @@ export const galleryIndex = (res, category)=>{
     });
     return plantilla
 }
+
 export const galleryCategory = ({data: {product_photos}} = res)=>{
     return /*html*/`
         <article class="article__product">
@@ -44,33 +45,34 @@ export const galleryCategory = ({data: {product_photos}} = res)=>{
 
 export const galleryCheckout = async()=>{
     let keys = Object.keys(sessionStorage)
+    let plantilla = "";
     keys.forEach(key=>{
-        let asdasd = JSON.parse(sessionStorage.getItem(key))
-        console.log(asdasd)
-        
+        let diccionarios = JSON.parse(sessionStorage.getItem(key));
+        console.log(diccionarios)
+        if(diccionarios.holi){
+            let value = diccionarios.data;
+            plantilla += /*html*/`
+            <article class="details__product">
+            <div class="product__imagen">
+               <img src="${value.product_photo}">
+            </div>
+            <div class="product__description">
+                <h3>${(value.product_title).substring(0, 15)}...</h3>
+                <small>⭐ ${value.product_star_rating ? value.product_star_rating : "*No Ratings*"}</small>
+                <span>${value.product_price}</span>
+            </div>
+            <div class="product__custom">
+                <img src="../storage/img/option.svg">
+                <div class="product__select">
+                <img src="../storage/img/minus.svg" id= "decreaseQuantity">
+                <span id ="quantity">1</span>
+                <img src="../storage/img/plus.svg" id= "increaseQuantity">
+            </div>
+        </div>
+        </article>`;
+        };
     })
-    return /*html*/`
-    <article class="details__product">
-    <div class="product__imagen">
-       <img src="${"a"}">
-    </div>
-    <div class="product__description">
-        <h3>${value.product_title}</h3>
-        <small>${category}</small>
-        <span>$212.99</span>
-    </div>
-    <div class="product__custom">
-        <img src="../storage/img/option.svg">
-        <div class="product__select">
-        <img src="../storage/img/minus.svg" id= "decreaseQuantity">
-        <span id ="quantity">1</span>
-        <img src="../storage/img/plus.svg" id= "increaseQuantity">
-    </div>
-</div>
-<div class="detail__score">
-    ${new Array(parseInt(dataUpdate.product_star_rating)).fill(`<img src="../storage/img/star.svg">`).join('')}
-    <span>${dataUpdate.product_star_rating}</span>
-    <a href="${dataUpdate.product_url}">(${dataUpdate.product_num_ratings} reviews)</a>
-</div>
-</article>`;
+return plantilla;
 }
+
+// ${product_photos.map(value => `<div class="product__image__item"><img src="${value}"></div>`).join('')}

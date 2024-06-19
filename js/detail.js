@@ -78,7 +78,9 @@ addEventListener("DOMContentLoaded", async(e)=>{
 
 
 footer__ul.addEventListener("click", async (e) =>{
-    sessionStorage.setItem(id, localStorage.getItem(id));
+    let asd = JSON.parse(localStorage.getItem(id));
+    asd["holi"] = true
+    sessionStorage.setItem(id, JSON.stringify(asd));
 })
 
 
