@@ -1,78 +1,55 @@
-import { galleryCategory, galleryCheckout } from "./components/gallery.js";
+import { galleryCategory, galleryCheckout, gallerycheckPrice } from "./components/gallery.js";
 import { titleProductDetail } from "./components/section.js";
 import { getProductId } from "./module/detail.js";
 import { descripDetails } from "./components/description.js";
 import { priceDetails } from "./components/price.js";
 
-let checkout__details__gallery = document.querySelector(".checkout__details")
 
-addEventListener("DOMContentLoaded", async(e)=>{
+let checkout__details__gallery = document.querySelector(".checkout__details");
+let precioTotal = document.querySelector("#precioTotal");
+
+document.addEventListener("DOMContentLoaded", async (e) => {
     let params = new URLSearchParams(location.search);
     let id = params.get('id');
-    if(!sessionStorage.getItem(id)) sessionStorage.setItem(id, JSON.stringify(await getProductId({id})));
-    
-    let info = JSON.parse(sessionStorage.getItem(id));
-    // main__section_gallery.innerHTML = await galleryCategory(info);
-    // main__section__title.innerHTML = await titleProductDetail(info);
-    // main__section__description.innerHTML = await descripDetails(info);
+    if (!sessionStorage.getItem(id)) sessionStorage.setItem(id, JSON.stringify(await getProductId({ id })));
 
+    let info = JSON.parse(sessionStorage.getItem(id));
 
     checkout__details__gallery.innerHTML = await galleryCheckout();
-    
-});
+    section__shopping__checkout.innerHTML = await gallerycheckPrice(info);
 
+    let decreaseButton = document.querySelector("#decreaseQuantity");
+    let increaseButton = document.querySelector("#increaseQuantity");
+    let quantitySpan = document.querySelector("#quantity");
 
+    const updatePrice = (quantity) => {
+        let precioEntero = parseFloat(info.data.product_price.replace('$', ''));
+        let precioTotalContent = `<span id="precioTotal">Add to Cart $${quantity * precioEntero}`;
+        if (info.data.product_original_price !== null) {
+            let precioOriginal = parseFloat(info.data.product_original_price.replace('$', ''));
+            precioTotalContent += `<del><sub>$${quantity * precioOriginal}</sub></del>`;
+        }
+        precioTotalContent += `</span>`;
+        precioTotal.innerHTML = precioTotalContent;
+    };
 
-let decreaseButton = document.querySelector("#decreaseQuantity");
-let increaseButton = document.querySelector("#increaseQuantity");
-let quantitySpan = document.querySelector("#quantity");
-let precioTotal = document.querySelector("#precioTotal")
+    decreaseButton.addEventListener('click', () => {
+        let quantity = parseInt(quantitySpan.textContent);
+        if (quantity > 1) {
+            quantity -= 1;
+            quantitySpan.textContent = quantity;
+            updatePrice(quantity);
+        }
+    });
 
-decreaseButton.addEventListener('click', async e => {
-    let quantity = parseInt(quantitySpan.textContent);
-if (info.data.product_price !==  null) {
-    let precioentero = parseFloat(info.data.product_price.replace('$',''))
-    if (info.data.product_original_price !== null){
-        let precioOriginal = parseFloat(info.data.product_original_price.replace('$',''));
-        if(quantity > 1){
-            quantitySpan.textContent = quantity - 1;
-        quantity = parseInt(quantitySpan.textContent);
-        precioTotal.innerHTML =/*html*/`
-            <span id= "precioTotal" >Add to Cart $${quantity * precioentero}<del><sub>$${quantity * precioOriginal}</sub></del></span>
-            `}
-        }else{
-            if(quantity > 1){
-                quantitySpan.textContent = quantity - 1;
-                quantity = parseInt(quantitySpan.textContent);
-                precioTotal.innerHTML = /*html*/`
-                <span id= "precioTotal">Add to Cart $${quantity * precioentero}</span>
-                `}
-            }
-        }else {
-            if(quantity > 1){
-                quantitySpan.textContent = quantity - 1;
-            };}
-        });
-        
-        
-        
-        increaseButton.addEventListener('click', async e => {
-            let quantity = parseInt(quantitySpan.textContent);
-            if (info.data.product_price !==  null) {
-                let precioentero = parseFloat(info.data.product_price.replace('$',''))
-                if (info.data.product_original_price !== null){
-                    let precioOriginal = parseFloat(info.data.product_original_price.replace('$',''));
-                    quantitySpan.textContent = quantity + 1;
-                    quantity = parseInt(quantitySpan.textContent);
-                    precioTotal.innerHTML =/*html*/`
-                    <span id= "precioTotal" >Add to Cart $${quantity * precioentero}<del><sub>$${quantity * precioOriginal}</sub></del></span>
-                    `}else{
-                        quantitySpan.textContent = quantity + 1;
-                        quantity = parseInt(quantitySpan.textContent);
-                        precioTotal.innerHTML = /*html*/`
-                        <span id= "precioTotal">Add to Cart $${quantity * precioentero}</span>
-                        `}
-                    }else return quantitySpan.textContent = quantity + 1;
+    increaseButton.addEventListener('click', () => {
+        let quantity = parseInt(quantitySpan.textContent);
+        quantity += 1;
+        quantitySpan.textContent = quantity;
+        updatePrice(quantity);
+    });
+
+    updatePrice(1);  // Inicializa el precio con la cantidad inicial
 });
 
                     

@@ -31,7 +31,7 @@ export const galleryCategory = ({data: {product_photos}} = res)=>{
     return /*html*/`
         <article class="article__product">
             <div class="product__image">
-                ${product_photos.map(value => `<div class="product__image__item"><img src="${value}"></div>`).join('')}
+            ${product_photos.map(value => `<div class="product__image__item"><img src="${value}"></div>`).join('')}
             </div>
             <div class="product__menu">
                 <a href="../">
@@ -63,7 +63,7 @@ export const galleryCheckout = async()=>{
             </div>
             <div class="product__custom">
                 <img src="../storage/img/option.svg">
-                <div class="product__select">
+                <div id = "precio" class="product__select">
                 <img src="../storage/img/minus.svg" id= "decreaseQuantity">
                 <span id ="quantity">1</span>
                 <img src="../storage/img/plus.svg" id= "increaseQuantity">
@@ -75,4 +75,20 @@ export const galleryCheckout = async()=>{
 return plantilla;
 }
 
-// ${product_photos.map(value => `<div class="product__image__item"><img src="${value}"></div>`).join('')}
+export const gallerycheckPrice = ({data: dataUpdate} = res) => {
+    return /*html*/`
+<article class="section__bill">
+<div class="bill__total">
+    <label> Total(9 items)</label>
+    <span> $131.97</span>
+</div>
+<div class="bill__fee">
+    <label> shoppping free</label>
+    <span> $00.00</span>
+</div>
+<div class="bill__subtotal">
+    <label> Sub Total</label>
+    <span> $131.97</span>
+</div>
+</article>`;
+}
