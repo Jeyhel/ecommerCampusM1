@@ -4,7 +4,6 @@ import { getProductId } from "./module/detail.js";
 import { descripDetails } from "./components/description.js";
 import { priceDetails } from "./components/price.js";
 
-
 let checkout__details__gallery = document.querySelector(".checkout__details");
 let precioTotal = document.querySelector("#precioTotal");
 
@@ -24,12 +23,11 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 
     const updatePrice = (quantity) => {
         let precioEntero = parseFloat(info.data.product_price.replace('$', ''));
-        let precioTotalContent = `<span id="precioTotal">Add to Cart $${quantity * precioEntero}`;
+        let precioTotalContent = `<span id="precioTotal">$${(quantity * precioEntero).toFixed(2)}</span>`;
         if (info.data.product_original_price !== null) {
             let precioOriginal = parseFloat(info.data.product_original_price.replace('$', ''));
-            precioTotalContent += `<del><sub>$${quantity * precioOriginal}</sub></del>`;
+            precioTotalContent += ` <del><sub>$${(quantity * precioOriginal).toFixed(2)}</sub></del>`;
         }
-        precioTotalContent += `</span>`;
         precioTotal.innerHTML = precioTotalContent;
     };
 
@@ -51,6 +49,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 
     updatePrice(1);  // Inicializa el precio con la cantidad inicial
 });
+
 
                     
                     // let informationProduct = document.querySelector("#informationProduct")
