@@ -1,7 +1,6 @@
 import { galleryCheckout, gallerycheckPrice } from "./components/gallery.js";
 import { getProductId } from "./module/detail.js";
 
-
 let checkout__details__gallery = document.querySelector(".checkout__details");
 
 
@@ -84,10 +83,21 @@ document.addEventListener("DOMContentLoaded", async (e) => {
         });
     
 
+    const updatePrice = (quantity) => {
+        let precioEntero = parseFloat(info.data.product_price.replace('$', ''));
+        let precioTotalContent = `<span id="precioTotal">$${(quantity * precioEntero).toFixed(2)}</span>`;
+        if (info.data.product_original_price !== null) {
+            let precioOriginal = parseFloat(info.data.product_original_price.replace('$', ''));
+            precioTotalContent += ` <del><sub>$${(quantity * precioOriginal).toFixed(2)}</sub></del>`;
+        }
+        precioTotal.innerHTML = precioTotalContent;
+    };
 
 
 
 
+
+                    
                     // let informationProduct = document.querySelector("#informationProduct")
                     // let LeerMasButton = document.querySelector("#leerMasOption");
                     
