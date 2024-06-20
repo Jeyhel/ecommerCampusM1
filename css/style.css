@@ -15,10 +15,16 @@
     height: 60px;
     
 }
-
+.header__information strong{
+    color: var(--color-2);
+ 
+}
+.header__information p{
+    color: var(--color-2);
+}
 .header__information span{
-    font-family: "EncodeSans-Bold";
-    margin-bottom: 20%;
+    font-family: "Monserrat-Black";
+    color: var(--color-2);
 }
 .header__login{
     /* background: violet; */
@@ -96,7 +102,7 @@
 .nav__ul li a{
     width: 125px;
     height: 35px;
-    font-family: "EncodeSans-Medium";
+    font-family: "Monserrat-Bold";
     /* background: orange; */
     text-decoration: none;
     display: flex;
@@ -166,7 +172,7 @@
 } 
 
 .main__article section h5{
-    font-family: "EncondeSans-Semibold";
+    font-family: "Monserrat-Italic";
     color: var(--color-2);
 }
 .main__article section small{
@@ -186,7 +192,7 @@
     margin-top: 10px;
 }
 .section__price span{
-    font-family: "EncondeSans-Semibold";
+    font-family: "Monserrat-Italic";
 }
 .price__score{
     display: flex;
