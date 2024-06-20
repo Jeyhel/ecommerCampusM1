@@ -14,14 +14,15 @@
     align-items: center;
     height: 60px;
 }
-.header__information{
-    /* background: green; */
+.header__information strong{
+    color: var(--color-2);
+ 
 }
 .header__information p{
     color: var(--color-2);
 }
 .header__information span{
-    font-family: "EncodeSans-Bold";
+    font-family: "Monserrat-Black";
     color: var(--color-2);
 }
 .header__login{
@@ -103,7 +104,7 @@
 .nav__ul li a{
     width: 125px;
     height: 35px;
-    font-family: "EncodeSans-Medium";
+    font-family: "Monserrat-Bold";
     /* background: orange; */
     text-decoration: none;
     display: flex;
@@ -179,7 +180,7 @@
     padding: 5px;
 }
 .main__article section h5{
-    font-family: "EncodeSans-Semibold";
+    font-family: "Monserrat-Italic";
     color: var(--color-2);
     margin-bottom: 9px;
 }
@@ -198,7 +199,7 @@
     margin-top: 10px;
 }
 .section__price span{
-    font-family: "EncodeSans-Semibold";
+    font-family: "Monserrat-Italic";
 }
 .price__score{
     display: flex;

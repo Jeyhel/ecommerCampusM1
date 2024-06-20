@@ -2,7 +2,7 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: "EncodeSans-Regular";
+    font-family: "Monserrat-Italic";
     box-sizing: border-box;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .header__nav div:nth-child(2) {
-    font-family: "EncodeSans-SemiBold";
+    font-family: "Monserrat-Black";
     color: var(--color-2);
 }
 
@@ -62,7 +62,7 @@
 
 .product__description h3 {
     font-size: 1em;
-    font-family: "EncodeSans-SemiBold";
+    font-family: "Monserrat-Italic";
     color: var(--color-2);
 }
 
@@ -72,7 +72,7 @@
 }
 
 .product__description span {
-    font-family: "EncodeSans-SemiBold";
+    font-family: "Monserrat-Black";
     position: absolute;
     bottom: 0;
     font-size: .9em;
@@ -204,7 +204,7 @@
    margin-top: 25px;
 }
 .section__bill span{
-    font-family: 'EncondeSana-SemiBold';
+    font-family: 'Monserrat-Italic';
 } 
 
 
@@ -272,12 +272,12 @@
 
 .footer__ul li a span{
     
-    font-family: "EncodeSans-Medium";
+    font-family: "Monserrat-Black";
     color: #fff;
 }
 .footer__ul li a del{
     color: var(--color-3);
-    font-family: "EncodeSans-Regular";
+    font-family: "Monserrat-Bold";
 }
 
 

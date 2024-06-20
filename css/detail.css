@@ -2,7 +2,7 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: "EncodeSans-Regular";
+    font-family: "Monserrat-Italic";
     box-sizing: border-box;
 }
 .main{
@@ -63,7 +63,7 @@
     align-items: center;
 }
 .detail__head h1{
-    font-family: "EncodeSans-SemiBold";
+    font-family: "Monserrat-Italic";
 }
 
 .product__select {
@@ -74,7 +74,7 @@
 }
 
 .product__select span{
-    font-family: "EncodeSans Bold" ;
+    font-family: "Monserrat-Italic" ;
 }
 
 .detail__core {
@@ -116,7 +116,7 @@
 .product__size,
 .product__color{
     margin-top: 5px;
-    font-family: "EncodeSans-Bold";
+    font-family: "Monserrat-Italic";
 
 }
 .product__siz h5,

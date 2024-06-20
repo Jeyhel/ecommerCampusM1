@@ -1,8 +1,8 @@
 :root{
-    --color-1: #292526;
-    --color-2: #1B2028;
-    --color-3: #A4AAAD;
-    --color-4: #111111;
+    --color-1: #8C4A63;
+    --color-2: #8C4A63;
+    --color-3: #F27E9D;
+    --color-4: #63333f;
     --color-5: #FFFFFF; 
     --space-layout-padding-lr: 0px 15px;
     --space-layout-padding-t: 10px;
@@ -18,18 +18,18 @@
 
 }
 @font-face {
-    font-family: "EncodeSans-Regular";
-    src: url("../storage/font/encode-sans/EncodeSans-Regular.ttf");
+    font-family: "Monserrat-Black";
+    src: url("../storage/font/encode-sans/Montserrat-Black.ttf");
 }
 @font-face {
-    font-family: "EncodeSans-Medium";
-    src: url("../storage/font/encode-sans/EncodeSans-Medium.ttf");
+    font-family: "Monserrat-Bold";
+    src: url("../storage/font/encode-sans/Montserrat-Bold.ttf");
 }
 @font-face {
-    font-family: "EncodeSans-SemiBold";
-    src: url("../storage/font/encode-sans/EncodeSans-SemiBold.ttf");
+    font-family: "Monserrat-Italic";
+    src: url("../storage/font/encode-sans/Montserrat-Italic.ttf");
 }
 @font-face {
-    font-family: "EncodeSans-Bold";
-    src: url("../storage/font/encode-sans/EncodeSans-Bold.ttf");
+    font-family: "Monserrat-Extralight";
+    src: url("../storage/font/encode-sans/Montserrat-ExtraLight.ttf");
 }
