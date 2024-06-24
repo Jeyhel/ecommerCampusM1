@@ -28,7 +28,6 @@ export const galleryIndex = (res, category)=>{
 }
 
 
-
 export const galleryCategory = ({data: {product_photos}} = res)=>{
     return /*html*/`
         <article class="article__product">

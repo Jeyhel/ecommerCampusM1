@@ -1,5 +1,6 @@
 import { headers } from "../components/env.js";
 
+
 export const getAllProductName = async({search:text, id:idCategory})=>{
     console.log("Cargando dato.......");
     console.log(text, idCategory); 
@@ -12,6 +13,8 @@ export const getAllProductName = async({search:text, id:idCategory})=>{
     let data = res.json();
     return data;
 }
+
+
 
 export const getAllCategory = async()=>{
     console.log("Esperando .......");
@@ -26,7 +29,7 @@ export const getAllCategory = async()=>{
 }
 
 
-
+document.querySelector(".carga").style.display = "block";
 export const getAllInicio= async()=>{
     let page = 2000
     
@@ -42,7 +45,9 @@ export const getAllInicio= async()=>{
         headers
     };
     let res = await fetch(url, options);
+    document.querySelector(".carga").style.display = "none";
     let data = res.json();
+
     return data;
 }
 
