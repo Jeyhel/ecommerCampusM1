@@ -223,6 +223,9 @@
     border-radius: 40px ;
     box-shadow: 0px 0px 55px 10px #fff
 }
+#index__contador{
+    color: aliceblue;
+}
 .footer__ul li{
     list-style: none;
     background: var(--color-1);
