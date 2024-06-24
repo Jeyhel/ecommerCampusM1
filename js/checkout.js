@@ -82,6 +82,9 @@ document.addEventListener("DOMContentLoaded", async (e) => {
             updatePrice(1);
                   
         });
+
+
+        
     
 
 

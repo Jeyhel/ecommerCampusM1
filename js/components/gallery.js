@@ -18,14 +18,16 @@ export const galleryIndex = (res, category)=>{
                 <div  class="price__score">
                     <img src="storage/img/star.svg">
                     <p>${(value.product_star_rating!=null) ? value.product_star_rating : 0}</p>
-                </div>
-            </div>
-        </section>
-        
-       `;
-    });
-    return plantilla
+                    </div>
+                    </div>
+                    </section>
+                    
+                    `;
+                });
+                return plantilla
 }
+
+
 
 export const galleryCategory = ({data: {product_photos}} = res)=>{
     return /*html*/`
@@ -74,6 +76,7 @@ export const galleryCheckout = async()=>{
     })
 return plantilla;
 }
+
 
 export const gallerycheckPrice = ({data: dataUpdate} = res) => {
     return /*html*/`
